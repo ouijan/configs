@@ -37,8 +37,10 @@
 #     echo "Active space.$sid"
 #     sketchybar --set space.$sid display=1 label.highlight=on background.drawing=off
 # done
+
+
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-    sketchybar --set $NAME background.drawing=on
+    sketchybar --set $NAME display=active background.drawing=on
 else
     sketchybar --set $NAME background.drawing=off
 fi
