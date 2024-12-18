@@ -28,7 +28,6 @@ TODO
 
 TODO
 
-- Hide empty (unfocused) workspaces
 - Indicate when aerospace "super" is active
 - Aerospace button styling?
 
