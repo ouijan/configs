@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# sketchybar --add item front_app left \
-#            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-#            --subscribe front_app front_app_switched
-
 front_app=(
-  label.font="$FONT:Black:12.0"
-  icon.background.drawing=on
-  display=active
-  script="$PLUGIN_DIR/front_app.sh"
-  click_script="open -a 'Mission Control'"
+    display=active
+    icon=󰁕
+    icon.font="$FONT:Bold:16.0"
+    label.font="$FONT:Bold:16.0"
+    icon.padding_left=10
+    icon.padding_right=5
+    label.padding_left=5
+    label.padding_right=10
+    script="$PLUGIN_DIR/front_app.sh"
 )
-sketchybar --add item front_app left         \
-           --set front_app "${front_app[@]}" \
-           --subscribe front_app front_app_switched
+
+sketchybar --add item front_app left \
+    --set front_app "${front_app[@]}" \
+    --subscribe front_app front_app_switched

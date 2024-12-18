@@ -82,3 +82,5 @@ vim.cmd([[
   highlight Normal ctermbg=none
   highlight NonText ctermbg=none
 ]])
+
+vim.g.loaded_perl_provider = 0

@@ -49,13 +49,14 @@ return {
 			sass = { "prettierd" },
 			xml = { "xmlformatter" },
 			python = { "black" },
-			go = { "gopls", "golines" },
+			go = { "goimports", "golines", "gofumpt" },
 			json = { "prettierd" },
 			jsonc = { "prettierd" },
 			cpp = { "clang-format" },
 			yaml = { "prettierd" },
 			yml = { "prettierd" },
-			cs = { "csharpier" },
+			-- cs = { "csharpier" },
+			sh = { "beautysh" },
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
 			--

@@ -7,5 +7,10 @@
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change
+    --set volume \
+    icon.padding_left=10 \
+    icon.padding_right=5 \
+    label.padding_left=5 \
+    label.padding_right=10 \
+    script="$PLUGIN_DIR/volume.sh" \
+    --subscribe volume volume_change
