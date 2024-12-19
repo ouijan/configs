@@ -54,9 +54,9 @@ default=(
     label.color=$NORD_WHITE_3
     label.padding_left=0
     label.padding_right=0
-    label.shadow.drawing=on
-    label.shadow.distance=2
-    label.shadow.color=0x99000000
+    # label.shadow.drawing=on
+    # label.shadow.distance=2
+    # label.shadow.color=0x99000000
     background.padding_right=0
     background.padding_left=0
     # background.height=26
@@ -72,8 +72,8 @@ source "$ITEMS_DIR/front_app.sh"
 ##### Adding Center Items #####
 
 ##### Adding Right Items #####
-source "$ITEMS_DIR/calendar.sh"
 source "$ITEMS_DIR/clock.sh"
+source "$ITEMS_DIR/calendar.sh"
 source "$ITEMS_DIR/volume.sh"
 source "$ITEMS_DIR/battery.sh"
 
