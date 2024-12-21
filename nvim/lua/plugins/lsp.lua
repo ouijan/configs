@@ -42,7 +42,7 @@ return {
 					},
 				},
 				-- clangd = {},
-				-- gopls = {},
+				gopls = {},
 				-- pyright = {},
 			},
 			tools = {

@@ -76,11 +76,11 @@ vim.opt.timeoutlen = 300
 vim.opt.scrolloff = 10
 
 -- Transparent background
-vim.cmd([[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-]])
+-- vim.cmd([[
+--   highlight Normal guibg=none
+--   highlight NonText guibg=none
+--   highlight Normal ctermbg=none
+--   highlight NonText ctermbg=none
+-- ]])
 
 vim.g.loaded_perl_provider = 0

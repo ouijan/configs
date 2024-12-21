@@ -19,8 +19,6 @@ Inspired by:
 TODO
 
 - Tree file explorer (oil.nvim?)
-- Git workflow ([lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file))
-- Golang Setup
 - Typescript Setup
 
 ## Sketchybar

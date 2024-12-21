@@ -9,7 +9,8 @@ config.font_size = 16
 config.line_height = 1.4
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.85
+config.macos_window_background_blur = 25
 
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
