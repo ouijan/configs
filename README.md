@@ -6,6 +6,16 @@ Most configurations use FiraCode Nerd Font [available here](https://www.nerdfont
 
 [GitRepo](https://github.com/nikitabobko/AeroSpace) • [Install](https://nikitabobko.github.io/AeroSpace/guide#installation) • [Documentation](https://nikitabobko.github.io/AeroSpace/guide)
 
+## Lazygit
+
+[GitRepo](https://github.com/jesseduffield/lazygit) • [Install](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#homebrew) • [Documentation](https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md)
+
+To use this config you need to set Lazygit to look in the correct config path.
+
+```
+export XDG_CONFIG_HOME="$HOME/.config"
+```
+
 ## NeoVim Config
 
 [GitRepo](https://github.com/neovim/neovim/tree/master) • [Install](https://github.com/neovim/neovim/blob/master/INSTALL.md) • [Documentation](https://github.com/neovim/neovim/wiki/Introduction)

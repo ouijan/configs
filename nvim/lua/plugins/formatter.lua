@@ -55,7 +55,7 @@ return {
 			cpp = { "clang-format" },
 			yaml = { "prettierd" },
 			yml = { "prettierd" },
-			-- cs = { "csharpier" },
+			cs = { "csharpier" },
 			sh = { "beautysh" },
 			markdown = { "prettierd" },
 			-- Conform can also run multiple formatters sequentially

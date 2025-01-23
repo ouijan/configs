@@ -41,13 +41,24 @@ return {
 						},
 					},
 				},
-				-- clangd = {},
 				gopls = {},
-				-- pyright = {},
+				vtsls = {
+					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "htmlangular" },
+					-- root_dir = require("lspconfig.util").root_pattern(".git"),
+					settings = {},
+				},
+				angularls = {
+					-- root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json", ".git"),
+				},
+				eslint = {
+					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "htmlangular" },
+				},
+				csharp_ls = {},
 			},
 			tools = {
 				-- NOTE: Add other tools (formatters/linters) to be installed
 				"stylua",
+				"csharpier",
 			},
 		},
 		config = function(_, opts)
