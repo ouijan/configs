@@ -1,83 +1,127 @@
--- NOTE: Plugins can also be configured to run Lua code when they are loaded.
---
--- This is often very useful to both group configuration, as well as handle
--- lazy loading plugins that don't need to be loaded immediately at startup.
---
--- For example, in the following configuration, we use:
---  event = 'VimEnter'
---
--- which loads which-key before all the UI elements are loaded. Events can be
--- normal autocommands events (`:help autocmd-events`).
---
--- Then, because we use the `opts` key (recommended), the configuration runs
--- after the plugin has been loaded as `require(MODULE).setup(opts)`.
---
--- Useful plugin to show you pending keybinds.
 return {
-    'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    "folke/which-key.nvim",
+    event = "VeryLazy",
     opts = {
-        icons = {
-            -- set icon mappings to true if you have a Nerd Font
-            mappings = vim.g.have_nerd_font,
-            -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-            -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
-            keys = vim.g.have_nerd_font and {} or {
-                Up = '<Up> ',
-                Down = '<Down> ',
-                Left = '<Left> ',
-                Right = '<Right> ',
-                C = '<C-…> ',
-                M = '<M-…> ',
-                D = '<D-…> ',
-                S = '<S-…> ',
-                CR = '<CR> ',
-                Esc = '<Esc> ',
-                ScrollWheelDown = '<ScrollWheelDown> ',
-                ScrollWheelUp = '<ScrollWheelUp> ',
-                NL = '<NL> ',
-                BS = '<BS> ',
-                Space = '<Space> ',
-                Tab = '<Tab> ',
-                F1 = '<F1>',
-                F2 = '<F2>',
-                F3 = '<F3>',
-                F4 = '<F4>',
-                F5 = '<F5>',
-                F6 = '<F6>',
-                F7 = '<F7>',
-                F8 = '<F8>',
-                F9 = '<F9>',
-                F10 = '<F10>',
-                F11 = '<F11>',
-                F12 = '<F12>'
-            }
+        preset = "modern",
+        plugins = {
+            registers = false,
+        },
+        win = {
+            width = { min = 100, max = 100 },
+        },
+        wo = {
+            winblend = 10,
+        },
+    },
+    keys = {
+        {
+            "<leader>?",
+            function()
+                require("which-key").show({ global = false })
+            end,
+            desc = "Buffer Local Keymaps (which-key)",
         },
 
-        -- Document existing key chains
-        spec = {{
-            '<leader>c',
-            group = '[C]ode',
-            mode = {'n', 'x'}
-        }, {
-            '<leader>d',
-            group = '[D]ocument'
-        }, {
-            '<leader>r',
-            group = '[R]ename'
-        }, {
-            '<leader>s',
-            group = '[S]earch'
-        }, {
-            '<leader>w',
-            group = '[W]orkspace'
-        }, {
-            '<leader>t',
-            group = '[T]oggle'
-        }, {
-            '<leader>h',
-            group = 'Git [H]unk',
-            mode = {'n', 'v'}
-        }}
-    }
+
+
+        -- Debugger
+        {
+            "<leader>d",
+            group = "Debugger",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>dt",
+            function()
+                require("dap").toggle_breakpoint()
+            end,
+            desc = "Toggle Breakpoint",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>dc",
+            function()
+                require("dap").continue()
+            end,
+            desc = "Continue",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>di",
+            function()
+                require("dap").step_into()
+            end,
+            desc = "Step Into",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>do",
+            function()
+                require("dap").step_over()
+            end,
+            desc = "Step Over",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>du",
+            function()
+                require("dap").step_out()
+            end,
+            desc = "Step Out",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>dr",
+            function()
+                require("dap").repl.open()
+            end,
+            desc = "Open REPL",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>dl",
+            function()
+                require("dap").run_last()
+            end,
+            desc = "Run Last",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>dq",
+            function()
+                require("dap").terminate()
+                require("dapui").close()
+                require("nvim-dap-virtual-text").toggle()
+            end,
+            desc = "Terminate",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>db",
+            function()
+                require("dap").list_breakpoints()
+            end,
+            desc = "List Breakpoints",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>de",
+            function()
+                require("dap").set_exception_breakpoints({ "all" })
+            end,
+            desc = "Set Exception Breakpoints",
+            nowait = true,
+            remap = false,
+        },
+    },
 }
