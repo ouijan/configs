@@ -33,25 +33,24 @@ return {
                 go = {
                     {
                         type = "delve",
-                        name = "Debug",
+                        name = "Debug Workspace (go.mod)",
                         request = "launch",
-                        program = "${file}"
+                        program = "${workspaceFolder}"
                     },
                     {
                         type = "delve",
-                        name = "Debug test", -- configuration for debugging test files
+                        name = "Debug File",
                         request = "launch",
-                        mode = "test",
                         program = "${file}"
                     },
-                    -- works with go.mod packages and sub packages
-                    {
-                        type = "delve",
-                        name = "Debug test (go.mod)",
-                        request = "launch",
-                        mode = "test",
-                        program = "./${relativeFileDirname}"
-                    }
+                    -- {
+                    --     type = "delve",
+                    --     name = "Debug File - Test", -- configuration for debugging test files
+                    --     request = "launch",
+                    --     mode = "test",
+                    --     program = "${file}"
+                    -- },
+
                 }
             }
         end,

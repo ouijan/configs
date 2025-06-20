@@ -1,8 +1,29 @@
 return {
-	"shaunsingh/nord.nvim",
-	config = function() 
-		vim.g.nord_disable_background = true
-		vim.g.nord_cursorline_transparent = false
-		require('nord').set()
-	end,
+    "shaunsingh/nord.nvim",
+    config = function()
+        nord = require('nord')
+
+        vim.g.nord_disable_background = true
+        -- vim.g.nord_contrast = true
+        -- vim.g.nord_cursorline_transparent = false
+        -- vim.g.nord_enable_sidebar_background = true
+
+        nord.set()
+
+        vim.api.nvim_set_hl(0, 'Normal', {
+            bg = 'none',
+        })
+
+        vim.api.nvim_set_hl(0, 'NormalFloat', {
+            bg = '#3b4252',
+        })
+        vim.api.nvim_set_hl(0, 'FloatTitle', {
+            bg = '#3b4252',
+            fg = '#88c0d0',
+            bold = true,
+        })
+        vim.api.nvim_set_hl(0, 'FloatBorder', {
+            bg = '#3b4252',
+        })
+    end,
 }

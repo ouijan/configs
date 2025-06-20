@@ -4,7 +4,11 @@ return {
         ensure_installed = {
             "lua_ls",
             "gopls",
-            "angularls"
+            "html",
+            "cssls",
+            "tailwindcss",
+            "vtsls",
+            "angularls",
         },
     },
     dependencies = {

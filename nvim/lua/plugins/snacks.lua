@@ -3,13 +3,59 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+        -- animate = { enabled = true },
         bigfile = { enabled = true },
-        dashboard = { enabled = true },
+        -- bufdelete = { enabled = true },
+        dashboard = {
+            enabled = true,
+            preset = {
+                header = [[
+███    ██ ██    ██ ██ ███    ███
+████   ██ ██    ██ ██ ████  ████
+██ ██  ██ ██    ██ ██ ██ ████ ██
+██  ██ ██  ██  ██  ██ ██  ██  ██
+██   ████   ████   ██ ██      ██]],
+            },
+        },
+        -- debug = { enabled = true },
         dim = { enabled = true },
+        -- explorer = { enabled = true },
+        -- git = { enabled = true },
+        -- gitbrowse = { enabled = true },
         image = { enabled = true },
         indent = { enabled = true },
-        -- quickfix = { enabled = true },
+        -- input = { enabled = true },
+        -- layout = { enabled = true },
+        lazygit = { enabled = true },
+        notifier = {
+            enabled = true,
+            style = "minimal",
+            margin = { top = 0, right = 1, bottom = 2 },
+            padding = true,
+            top_down = false,
+        },
+        notify = { enabled = true },
+        -- picker = { enabled = true },
+        -- profiler = { enabled = true },
+        quickfile = { enabled = true },
+        -- rename = { enabled = true },
         scope = { enabled = true },
-        -- terminal = { enabled = true },
+        -- scratch = { enabled = true },
+        -- scroll = { enabled = true },
+        -- statuscolumn = { enabled = true },
+        terminal = { enabled = true },
+        -- toggle = { enabled = true },
+        -- util = { enabled = true },
+        -- win = { enabled = true },
+        -- words = { enabled = true },
+        -- zen = { enabled = true },
+        styles = {
+            notification = {
+                border = "solid",
+            },
+            notification_history = {
+                border = "solid",
+            }
+        }
     },
 }
