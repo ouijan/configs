@@ -14,11 +14,6 @@ return {
             "mfussenegger/nvim-dap",
         },
         opts = {
-            ensure_installed = {
-                "delve", -- Go debugger
-                -- "cppdbg", -- C/C++ debugger
-            },
-            automatic_installation = true,
             handlers = {
                 function(config)
                     require("mason-nvim-dap").default_setup(config)

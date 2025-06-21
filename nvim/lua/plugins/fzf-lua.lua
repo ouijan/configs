@@ -5,6 +5,19 @@ return {
         "borderless",
         -- "max-perf",
         "hide", -- fix for resume
+        defaults = {
+            previewer = false,
+        },
+        files = {
+            formatter = "path.filename_first",
+            previewer = true,
+        },
+        grep = {
+            previewer = true,
+        },
+        lsp = {
+            --
+        },
         winopts = {
             border = "solid",
             preview = {

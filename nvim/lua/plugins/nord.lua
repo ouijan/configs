@@ -25,5 +25,12 @@ return {
         vim.api.nvim_set_hl(0, 'FloatBorder', {
             bg = '#3b4252',
         })
+
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+            vim.lsp.handlers.hover,
+            {
+                border = "single" -- options: "single", "double", "rounded", "solid", "shadow", or custom table
+            }
+        )
     end,
 }

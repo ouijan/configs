@@ -78,7 +78,7 @@ return {
         { "<leader>ca",       function() require("fzf-lua").lsp_code_actions() end,           desc = "Code Actions", },
         { "<leader>csd",      function() require("fzf-lua").lsp_document_symbols() end,       desc = "Code Symbols Document", },
         { "<leader>csw",      function() require("fzf-lua").lsp_live_workspace_symbols() end, desc = "Code Symbols Workspace", },
-        { "<leader>cf",       function() require("fzf-lua").lsp_finder() end,                 desc = "Code LSP Finder", },
+        -- { "<leader>cf",       function() require("fzf-lua").lsp_finder() end,                 desc = "Code LSP Finder", },
         { "<leader>cdd",      function() require("fzf-lua").diagnostics_document() end,       desc = "Code Diagnostics for Document", },
         { "<leader>cdw",      function() require("fzf-lua").diagnostics_workspace() end,      desc = "Code Diagnostics for Workspce", },
 
@@ -89,20 +89,29 @@ return {
         { "<leader>gr",       function() require("fzf-lua").lsp_references() end,             desc = "Go to References", },
 
         -- Format & Rename
-        { "<leader>f",        function() vim.lsp.buf.format() end,                            desc = "Format" },
-        { "<leader>rn",       function() vim.lsp.buf.rename() end,                            desc = "Rename Symbol", },
+        {
+            "<leader>f",
+            function() Wish.format() end,
+            desc = "Format"
+        },
+        { "<leader>rn", function() vim.lsp.buf.rename() end,           desc = "Rename Symbol", },
 
         -- Quickfix
         -- { "<leader>q",        group = "Quickfix" },
-        { "<leader>q",        function() require("fzf-lua").quickfix() end,                   desc = "Quickfix List", },
+        { "<leader>q",  function() require("fzf-lua").quickfix() end,  desc = "Quickfix List", },
         -- { "<leader>ql",       function() require("fzf-lua").loclist() end,                    desc = "Location List", },
         -- { "<leader>qj",       function() require("fzf-lua").jumplist() end,                   desc = "Jump List", },
         -- { "<leader>qk",       function() require("fzf-lua").keymaps() end,                    desc = "Keymaps" },
         --
 
         -- AI
-        { "<leader>ai",       "<cmd>CodeCompanion<cr>",                                       desc = "AI Inline" },
-        { "<leader>ac",       "<cmd>CodeCompanionChat Toggle<cr>",                            desc = "AI Chat" },
-        { "<leader>aa",       "<cmd>CodeCompanionActions<cr>",                                desc = "AI Actions" },
+        { "<leader>ai", "<cmd>CodeCompanion<cr>",                      desc = "AI Inline" },
+        { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>",           desc = "AI Chat" },
+        { "<leader>aa", "<cmd>CodeCompanionActions<cr>",               desc = "AI Actions" },
+
+        -- Notifications
+        { "<leader>n",  group = "Notifications" },
+        { "<leader>nd", function() Snacks.notifier.hide() end,         desc = "Dismiss Notifications" },
+        { "<leader>nh", function() Snacks.notifier.show_history() end, desc = "Show Notification History" },
     },
 }
