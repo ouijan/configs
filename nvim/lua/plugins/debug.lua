@@ -1,85 +1,105 @@
 return {
-    {
-        "theHamsta/nvim-dap-virtual-text",
-        event = "VeryLazy",
-        opts = {},
-    },
+    -- {
+    --     "theHamsta/nvim-dap-virtual-text",
+    --     event = "VeryLazy",
+    --     opts = {},
+    -- },
 
     -- Debug Adapter Protocol (DAP) configuration
-    {
-        "jay-babu/mason-nvim-dap.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "mason.nvim",
-            "mfussenegger/nvim-dap",
-        },
-        opts = {
-            handlers = {
-                function(config)
-                    require("mason-nvim-dap").default_setup(config)
-                end,
-            },
-        },
-        config = function(_, opts)
-            require("mason-nvim-dap").setup(opts)
 
-            local dap = require("dap")
-            dap.configurations = {
-                go = {
-                    {
-                        type = "delve",
-                        name = "Debug Workspace (go.mod)",
-                        request = "launch",
-                        program = "${workspaceFolder}"
-                    },
-                    {
-                        type = "delve",
-                        name = "Debug File",
-                        request = "launch",
-                        program = "${file}"
-                    },
-                    -- {
-                    --     type = "delve",
-                    --     name = "Debug File - Test", -- configuration for debugging test files
-                    --     request = "launch",
-                    --     mode = "test",
-                    --     program = "${file}"
-                    -- },
-
-                }
-            }
-        end,
-    },
+    --     "jay-babu/mason-nvim-dap.nvim",
+    --     event = "VeryLazy",
+    --     dependencies = {
+    --         "mason.nvim",
+    --         "mfussenegger/nvim-dap",
+    --     },
+    --     keys = {
+        -- { "<leader>dt", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint", },
+        -- { "<leader>dc", function() require("dap").continue() end,          desc = "Continue", },
+        -- { "<leader>di", function() require("dap").step_into() end,         desc = "Step Into", },
+        -- { "<leader>do", function() require("dap").step_over() end,         desc = "Step Over", },
+        -- { "<leader>du", function() require("dap").step_out() end,          desc = "Step Out", },
+        -- { "<leader>dr", function() require("dap").repl.open() end,         desc = "Open REPL", },
+        -- { "<leader>dl", function() require("dap").run_last() end,          desc = "Run Last", },
+        -- {
+        --     "<leader>dq",
+        --     function()
+        --         require("dap").terminate()
+        --         require("dapui").close()
+        --         require("nvim-dap-virtual-text").toggle()
+        --     end,
+        --     desc = "Terminate",
+        -- },
+        -- { "<leader>db", function() require("dap").list_breakpoints() end,                   desc = "List Breakpoints", },
+        -- { "<leader>de", function() require("dap").set_exception_breakpoints({ "all" }) end, desc = "Set Exception Breakpoints", },
+    --     }
+    --     opts = {
+    --         handlers = {
+    --             function(config)
+    --                 require("mason-nvim-dap").default_setup(config)
+    --             end,
+    --         },
+    --     },
+    --     config = function(_, opts)
+    --         require("mason-nvim-dap").setup(opts)
+    --
+    --         local dap = require("dap")
+    --         dap.configurations = {
+    --             go = {
+    --                 {
+    --                     type = "delve",
+    --                     name = "Debug Workspace (go.mod)",
+    --                     request = "launch",
+    --                     program = "${workspaceFolder}"
+    --                 },
+    --                 {
+    --                     type = "delve",
+    --                     name = "Debug File",
+    --                     request = "launch",
+    --                     program = "${file}"
+    --                 },
+    --                 -- {
+    --                 --     type = "delve",
+    --                 --     name = "Debug File - Test", -- configuration for debugging test files
+    --                 --     request = "launch",
+    --                 --     mode = "test",
+    --                 --     program = "${file}"
+    --                 -- },
+    --
+    --             }
+    --         }
+    --     end,
+    -- },
 
     -- Dap UI
-    {
-        "rcarriga/nvim-dap-ui",
-        event = "VeryLazy",
-        dependencies = {
-            "mfussenegger/nvim-dap",
-            "nvim-neotest/nvim-nio",
-            "theHamsta/nvim-dap-virtual-text",
-        },
-        config = function()
-            local dap = require("dap")
-            local ui = require("dapui")
-
-            ui.setup()
-
-            vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
-
-            dap.listeners.before.attach.dapui_config = function()
-                ui.open()
-            end
-            dap.listeners.before.launch.dapui_config = function()
-                ui.open()
-            end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                ui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                ui.close()
-            end
-        end,
-    },
+    -- {
+    --     "rcarriga/nvim-dap-ui",
+    --     event = "VeryLazy",
+    --     dependencies = {
+    --         "mfussenegger/nvim-dap",
+    --         "nvim-neotest/nvim-nio",
+    --         "theHamsta/nvim-dap-virtual-text",
+    --     },
+    --     config = function()
+    --         local dap = require("dap")
+    --         local ui = require("dapui")
+    --
+    --         ui.setup()
+    --
+    --         vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
+    --
+    --         dap.listeners.before.attach.dapui_config = function()
+    --             ui.open()
+    --         end
+    --         dap.listeners.before.launch.dapui_config = function()
+    --             ui.open()
+    --         end
+    --         dap.listeners.before.event_terminated.dapui_config = function()
+    --             ui.close()
+    --         end
+    --         dap.listeners.before.event_exited.dapui_config = function()
+    --             ui.close()
+    --         end
+    --     end,
+    -- },
 }

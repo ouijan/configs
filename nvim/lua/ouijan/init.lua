@@ -1,7 +1,7 @@
 require("ouijan.set")
-require("ouijan.wish")
+require('ouijan.utils')
 require("ouijan.lazy")
-require("ouijan.remap")
+require("ouijan.keymap")
 require("ouijan.autocmd")
 
 

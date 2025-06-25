@@ -10,7 +10,6 @@ vim.g.loaded_ruby_provider = 0
 vim.g.python3_host_prog = "~/.pyenv/versions/nvim3/bin/python"
 -- vim.g.node_host_prog = "~/.nvm/versions/node/v22.11.0/bin/neovim-node-host"
 
-
 -- line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -32,7 +31,6 @@ vim.opt.incsearch = true
 -- terminal
 vim.opt.termguicolors = true
 
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
@@ -41,7 +39,15 @@ vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
 
+vim.diagnostic.config({
+	underline = true,
+	virtual_text = true,
+	-- virtual_lines = true,
+	signs = true,
+	-- severity_sort = true,
+})
+
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function()
-    vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = "unnamedplus"
 end)

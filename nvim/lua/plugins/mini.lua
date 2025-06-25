@@ -1,9 +1,14 @@
 return {
-    {
-        'echasnovski/mini.surround',
-        version = '*',
-        opts = {
-            -- Must be included to call setup()
-        }
-    },
+	{
+		"echasnovski/mini.surround",
+		version = false,
+		opts = {},
+	},
+	{
+		"echasnovski/mini.sessions",
+		version = false,
+		opts = {
+			autoread = true,
+		},
+	},
 }

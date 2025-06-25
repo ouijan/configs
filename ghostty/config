@@ -1,0 +1,18 @@
+theme = dark:nord,light:nord
+
+font-family = Hack Nerd Font Mono
+font-size = 14
+# font-thicken = true
+# font-thicken-strength = 0
+
+background-opacity = .9
+background-blur = 20
+
+window-padding-y = 0, 0
+window-padding-x = 4, 4
+window-padding-balance = true
+window-padding-color = "extend"
+
+adjust-cell-width = 4%
+adjust-cell-height = 30%
+
