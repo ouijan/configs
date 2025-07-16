@@ -5,9 +5,11 @@ return {
 	},
 	opts = {
 		options = {
-			theme = "nord",
-			section_separators = { left = "", right = "" },
-			component_separators = { left = "", right = "" },
+			theme = "catppuccin",
+			section_separators = { left = "", right = "" },
+			component_separators = { left = "", right = "" },
+			-- section_separators = { left = "", right = "" },
+			-- component_separators = { left = "", right = "" },
 		},
 	},
 }

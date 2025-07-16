@@ -20,6 +20,13 @@ return {
 				desc = "Search Grep",
 			},
 			{
+				"<leader>sd",
+				function()
+					require("fzf-lua").git_diff()
+				end,
+				desc = "Search Git Diff",
+			},
+			{
 				"<leader>sm",
 				function()
 					require("fzf-lua").manpages()
@@ -71,14 +78,14 @@ return {
 				desc = "Code Actions",
 			},
 			{
-				"<leader>csd",
+				"<leader>cs",
 				function()
 					require("fzf-lua").lsp_document_symbols()
 				end,
 				desc = "Code Symbols Document",
 			},
 			{
-				"<leader>csw",
+				"<leader>cS",
 				function()
 					require("fzf-lua").lsp_live_workspace_symbols()
 				end,
@@ -86,14 +93,14 @@ return {
 			},
 			-- { "<leader>cf",       function() require("fzf-lua").lsp_finder() end,                 desc = "Code LSP Finder", },
 			{
-				"<leader>cdd",
+				"<leader>cq",
 				function()
 					require("fzf-lua").diagnostics_document()
 				end,
 				desc = "Code Diagnostics for Document",
 			},
 			{
-				"<leader>cdw",
+				"<leader>cQ",
 				function()
 					require("fzf-lua").diagnostics_workspace()
 				end,
@@ -102,57 +109,71 @@ return {
 
 			-- Go to
 			{
-				"<leader>gd",
+				"<leader>cd",
 				function()
 					require("fzf-lua").lsp_definitions()
 				end,
 				desc = "Go to Definition",
 			},
 			{
-				"<leader>gD",
+				"<leader>cD",
 				function()
 					require("fzf-lua").lsp_declarations()
 				end,
 				desc = "Go to Declaration",
 			},
 			{
-				"<leader>gr",
+				"<leader>cr",
 				function()
 					require("fzf-lua").lsp_references()
 				end,
 				desc = "Go to References",
 			},
+
+			-- Quickfix
+			{
+				"<leader>q",
+				function()
+					require("fzf-lua").quickfix()
+				end,
+				desc = "Quickfix List",
+			},
 		},
 		opts = {
 			-- "borderless",
-			-- "max-perf",
+			-- "border-fused",
 			"hide", -- fix for resume
-			-- defaults = {
-			-- 	previewer = false,
-			-- },
-			files = {
+			defaults = {
+				previewer = true,
 				formatter = "path.filename_first",
-				-- 	previewer = true,
+				-- winopts = {
+				-- border = "none",
+				-- height = 0.95,
+				-- width = 0.95,
+				-- 	preview = {
+				-- 		horizontal = "right:50%",
+				-- 	},
+				-- },
 			},
-			-- grep = {
-			-- 	previewer = true,
-			-- },
 			lsp = {
 				code_actions = {
 					previewer = false,
 				},
 			},
-			-- winopts = {
-			-- 	-- border = "solid",
-			-- 	-- preview = {
-			-- 	-- 	title = false,
-			-- 	-- 	border = "solid",
-			-- 	-- },
-			-- },
-			-- hls = {
-			-- 	preview_normal = "NormalFloat",
-			-- 	preview_border = "NormalFloat",
-			-- },
+			winopts = {
+				border = "solid",
+				preview = {
+					-- 	-- 	title = false,
+					border = "solid",
+					scrollbar = "float",
+				},
+			},
+			hls = {
+				normal = "NormalFloat",
+				border = "NormalFloat",
+				preview_normal = "Normal",
+				preview_border = "Normal",
+			},
 			keymap = {
 				fzf = {
 					["ctrl-q"] = "select-all+accept",

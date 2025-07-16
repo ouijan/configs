@@ -24,20 +24,39 @@ return {
 				{ name = "path" },
 				{ name = "cmdline" },
 			},
-			lspkind = {},
+			-- lspkind = {},
 		},
 		config = function(_, opts)
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
-			local lspkind = require("lspkind")
+			-- local lspkind = require("lspkind")
 			cmp.setup({
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
 					end,
 				},
+				window = {
+					completion = {
+						border = "rounded",
+						-- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+						col_offset = -3,
+						side_padding = 0,
+					},
+				},
 				formatting = {
-					format = lspkind.cmp_format(opts.lspkind or {}),
+					fields = { "kind", "abbr", "menu" },
+					-- format = lspkind.cmp_format(opts.lspkind or {}),
+
+					format = function(entry, vim_item)
+						local kind =
+							require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+						local strings = vim.split(kind.kind, "%s", { trimempty = true })
+						kind.kind = " " .. (strings[1] or "") .. " "
+						kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+						return kind
+					end,
 				},
 				mapping = {
 					["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -55,6 +74,15 @@ return {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = opts.cmd_sources or {},
 			})
+
+			-- Copilot integration
+			-- cmp.event:on("menu_opened", function()
+			-- 	vim.b.copilot_suggestion_hidden = true
+			-- end)
+			--
+			-- cmp.event:on("menu_closed", function()
+			-- 	vim.b.copilot_suggestion_hidden = false
+			-- end)
 		end,
 	},
 }

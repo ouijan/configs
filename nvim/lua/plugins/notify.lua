@@ -6,18 +6,7 @@ return {
 			render = "minimal",
 			stages = "fade",
 			max_width = 50,
-		},
-		keys = {
-			-- {
-			-- 	"<leader>n",
-			-- 	function()
-			-- 		vim.cmd("Notifications")
-			-- 	end,
-			-- 	desc = "Notifications",
-			-- },
-			-- { "Notifications<leader>n",  group = "Notifications" },
-			-- { "<leader>nd", function() Snacks.notifier.hide() end,         desc = "Dismiss Notifications" },
-			-- { "<leader>nh", function() Snacks.notifier.show_history() end, desc = "Show Notification History" },
+			background_colour = "#000000",
 		},
 		config = function(_, opts)
 			local notify = require("notify")
@@ -37,6 +26,60 @@ return {
 			"MunifTanjim/nui.nvim",
 			-- "rcarriga/nvim-notify",
 		},
-		opts = {},
+		opts = {
+			presets = {
+				lsp_doc_border = true,
+			},
+			lsp = {
+				documentation = {
+					opts = {
+						border = {
+							style = "none",
+							padding = { 1, 2 },
+						},
+						-- win_options = {
+						-- winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
+						-- },
+					},
+				},
+			},
+			views = {
+				cmdline_popup = {
+					position = {
+						row = 5,
+						col = "50%",
+					},
+					size = {
+						width = 60,
+						height = "auto",
+					},
+					border = {
+						style = "none",
+						padding = { 1, 2 },
+					},
+					win_options = {
+						winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
+					},
+				},
+				popupmenu = {
+					relative = "editor",
+					position = {
+						row = 8,
+						col = "50%",
+					},
+					size = {
+						width = 60,
+						height = 10,
+					},
+					border = {
+						style = "none",
+						padding = { 1, 2 },
+					},
+					win_options = {
+						winhighlight = { Normal = "NormalFloat", FloatBorder = "FloatBorder" },
+					},
+				},
+			},
+		},
 	},
 }

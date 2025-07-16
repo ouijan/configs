@@ -4,7 +4,7 @@ return {
 		{
 			"<leader>f",
 			function()
-				require("conform").format({ async = false })
+				OuijanUtils.format()
 			end,
 			desc = "Format",
 		},
@@ -20,7 +20,8 @@ return {
 			scss = { "prettierd" },
 			json = { "prettierd" },
 			markdown = { "prettierd" },
-			-- go = { 'gofumpt' },
+			go = { "goimports", "golines", "gofumpt" },
+			cpp = { "clang-format" },
 		},
 	},
 }

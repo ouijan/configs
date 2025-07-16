@@ -5,10 +5,14 @@ return {
 		opts = {},
 	},
 	{
-		"echasnovski/mini.sessions",
+		"echasnovski/mini.diff",
 		version = false,
 		opts = {
-			autoread = true,
+			-- view = {
+			-- 	style = "sign",
+			-- 	-- signs = { add = '▒', change = '▒', delete = '▒' },
+			-- 	signs = { add = "󱪼", change = "󱪼", delete = "󱪼" },
+			-- },
 		},
 	},
 }

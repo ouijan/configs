@@ -1,0 +1,48 @@
+*
+
+# Include root files
+!README.md
+!.gitignore
+
+# Include oh-my-posh
+!oh-my-posh
+!oh-my-posh/**/*
+
+# Include Aerospace
+!aerospace
+!aerospace/**/*
+
+# Include Yazi
+!yazi
+!yazi/**/*
+
+# Include Lazygit
+!lazygit
+!lazygit/**/*
+
+# Include NeoVim 
+!nvim
+!nvim/**/*
+nvim/lazy-lock.json
+
+# Include SketchyBar
+!sketchybar
+!sketchybar/**/*
+
+
+# Include WezTerm
+!wezterm
+!wezterm/**/*
+
+# Include Ghostty
+!ghostty
+!ghostty/**/*
+
+# Include Tmux
+!tmux
+!tmux/**/*
+tmux/plugins/**/*
+
+
+# File Ignores
+Session.vim

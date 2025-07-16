@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "rosewater": "#f5e0dc",
+    "flamingo": "#f2cdcd",
+    "pink": "#f5c2e7",
+    "mauve": "#cba6f7",
+    "red": "#f38ba8",
+    "maroon": "#eba0ac",
+    "peach": "#fab387",
+    "yellow": "#f9e2af",
+    "green": "#a6e3a1",
+    "teal": "#94e2d5",
+    "sky": "#89dceb",
+    "sapphire": "#74c7ec",
+    "blue": "#89b4fa",
+    "lavender": "#b4befe",
+    "text": "#cdd6f4",
+    "subtext1": "#bac2de",
+    "subtext0": "#a6adc8",
+    "overlay2": "#9399b2",
+    "overlay1": "#7f849c",
+    "overlay0": "#6c7086",
+    "surface2": "#585b70",
+    "surface1": "#45475a",
+    "surface0": "#313244",
+    "base": "#1e1e2e",
+    "mantle": "#181825",
+    "crust": "#11111b"
+  },
+  "final_space": true,
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "trailing_diamond": "",
+      "segments": [
+        {
+          "foreground": "p:base",
+          "background": "p:blue",
+          "properties": {
+            "folder_icon": "...",
+            "home_icon": "~",
+            "style": "agnoster_short",
+            "mapped_locations": {
+              "~/.config/": " <b>CONFIG</b>",
+              "~/code/github.com/ouijan/": " <b>OUIJAN</b>",
+              "~/code/github.com/principle-theorem/principle-theorem/": " <b>PRINCIPLE 1</b>",
+              "~/code/github.com/principle-theorem/principle-theorem-2/": " <b>PRINCIPLE 2</b>",
+              "~/code/github.com/principle-theorem/principle-theorem-3/": " <b>PRINCIPLE 3</b>"
+            }
+          },
+          "style": "diamond",
+          "powerline_symbol": "",
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "p:blue",
+          "background": "p:surface0",
+          "properties": {
+            "branch_icon": " ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": " {{ .HEAD }} ",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "type": "git"
+        },
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:green",
+          "background": "p:surface0",
+          "template": " {{ .Major }}.{{ .Minor }} "
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "p:blue",
+          "properties": {
+            "time_format": "15:04:05"
+          }
+        }
+      ]
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}

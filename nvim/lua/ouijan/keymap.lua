@@ -21,3 +21,23 @@ vim.keymap.set("n", "N", "nzzzv", { desc = "Previous match" })
 -- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {
 --     desc = 'Move focus to the upper window'
 -- })
+
+vim.keymap.set("n", "<leader>dp", function()
+	vim.diagnostic.goto_prev()
+end, { desc = "Diagnostic Previous" })
+
+vim.keymap.set("n", "<leader>dn", function()
+	vim.diagnostic.goto_next()
+end, { desc = "Diagnostic Next" })
+
+vim.keymap.set("n", "<leader>dk", function()
+	vim.diagnostic.open_float()
+end, { desc = "Diagnostic Inspect" })
+
+vim.keymap.set("n", "<leader>rn", function()
+	vim.lsp.buf.rename()
+end, { desc = "Rename Symbol" })
+
+vim.keymap.set("n", "<leader>sn", function()
+	require("noice").cmd("pick")
+end, { desc = "Search Notifications" })
