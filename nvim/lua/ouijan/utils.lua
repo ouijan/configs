@@ -32,3 +32,12 @@ M.get_current_path = function()
 	end
 	return path
 end
+
+M.strip_icons = function(str)
+	-- Match and remove everything up to the first printable path character
+	return str:match("[%w%./~][%w%p%s]*")
+end
+
+M.set_normal_mode = function()
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-c>", true, false, true), "n", true)
+end

@@ -43,6 +43,10 @@ nvim/lazy-lock.json
 !tmux/**/*
 tmux/plugins/**/*
 
+# Include MCPHub
+!mcphub
+!mcphub/**/*
+
 
 # File Ignores
 Session.vim

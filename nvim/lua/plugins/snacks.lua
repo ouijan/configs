@@ -3,7 +3,7 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		-- animate = { enabled = true },
+		animate = { enabled = true },
 		bigfile = { enabled = true },
 		-- bufdelete = { enabled = true },
 		dashboard = { enabled = true },

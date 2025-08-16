@@ -13,6 +13,13 @@ return {
 				desc = "Search Files",
 			},
 			{
+				"<leader>sF",
+				function()
+					require("fzf-lua").live_grep()
+				end,
+				desc = "Search Grep",
+			},
+			{
 				"<leader>sg",
 				function()
 					require("fzf-lua").live_grep()
@@ -23,6 +30,15 @@ return {
 				"<leader>sd",
 				function()
 					require("fzf-lua").git_diff()
+				end,
+				desc = "Search Git Diff",
+			},
+			{
+				"<leader>sD",
+				function()
+					require("fzf-lua").grep({
+						raw_cmd = [[git status -su | rg "^\s*M" | cut -d ' ' -f3 | xargs rg --hidden --column --line-number --no-heading --color=always  --with-filename -e '']],
+					})
 				end,
 				desc = "Search Git Diff",
 			},
@@ -91,23 +107,6 @@ return {
 				end,
 				desc = "Code Symbols Workspace",
 			},
-			-- { "<leader>cf",       function() require("fzf-lua").lsp_finder() end,                 desc = "Code LSP Finder", },
-			{
-				"<leader>cq",
-				function()
-					require("fzf-lua").diagnostics_document()
-				end,
-				desc = "Code Diagnostics for Document",
-			},
-			{
-				"<leader>cQ",
-				function()
-					require("fzf-lua").diagnostics_workspace()
-				end,
-				desc = "Code Diagnostics for Workspce",
-			},
-
-			-- Go to
 			{
 				"<leader>cd",
 				function()
@@ -130,6 +129,22 @@ return {
 				desc = "Go to References",
 			},
 
+			-- Diagnostics
+			{
+				"<leader>dd",
+				function()
+					require("fzf-lua").diagnostics_document()
+				end,
+				desc = "Diagnostics for Document",
+			},
+			{
+				"<leader>dw",
+				function()
+					require("fzf-lua").diagnostics_workspace()
+				end,
+				desc = "Diagnostics for Workspce",
+			},
+
 			-- Quickfix
 			{
 				"<leader>q",
@@ -144,16 +159,24 @@ return {
 			-- "border-fused",
 			"hide", -- fix for resume
 			defaults = {
-				previewer = true,
+				-- previewer = true,
 				formatter = "path.filename_first",
-				-- winopts = {
-				-- border = "none",
-				-- height = 0.95,
-				-- width = 0.95,
-				-- 	preview = {
-				-- 		horizontal = "right:50%",
-				-- 	},
-				-- },
+				winopts = {
+					-- border = "none",
+					height = 1,
+					width = 1,
+					preview = {
+						-- horizontal = "right:50%",
+					},
+				},
+			},
+			git = {
+				diff = {
+					formatter = false,
+					-- previewer = "builtin",
+					-- preview = "git diff {ref} {file}",
+					-- preview_pager = true,
+				},
 			},
 			lsp = {
 				code_actions = {

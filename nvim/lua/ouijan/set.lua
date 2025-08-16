@@ -3,7 +3,7 @@ vim.g.maplocalleader = "\\"
 
 vim.o.termguicolors = true
 vim.g.have_nerd_font = true
--- vim.g.winborder = "solid"
+vim.g.winborder = "solid"
 
 -- loaders
 vim.g.loaded_perl_provider = 0
@@ -38,16 +38,18 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = false,
-	virtual_lines = { current_line = true },
+	virtual_lines = false, -- { current_line = true },
 	signs = true,
 	severity_sort = true,
 	float = true,
 })
+
+vim.opt.fillchars:append({ diff = "╱" })
 
 vim.o.pumheight = 10
 -- vim.o.pummaxwidth = 10010

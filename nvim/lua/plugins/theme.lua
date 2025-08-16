@@ -11,11 +11,31 @@ return {
 				mason = true,
 				cmp = true,
 				noice = true,
-				mini = true,
+				mini = {
+					enabled = true,
+					indentscope_color = "lavender", -- catppuccin color (eg. `lavender`) Default: text
+				},
 				neotree = true,
 				notify = true,
 				native_lsp = {
 					enabled = true,
+					virtual_text = {
+						errors = { "italic" },
+						hints = { "italic" },
+						warnings = { "italic" },
+						information = { "italic" },
+						ok = { "italic" },
+					},
+					underlines = {
+						errors = { "underline" },
+						hints = { "underline" },
+						warnings = { "underline" },
+						information = { "underline" },
+						ok = { "underline" },
+					},
+					inlay_hints = {
+						background = true,
+					},
 				},
 				snacks = {
 					enabled = true,
@@ -28,8 +48,21 @@ return {
 		config = function(_, opts)
 			require("catppuccin").setup(opts)
 			vim.cmd.colorscheme("catppuccin")
-
 			local macchiato = require("catppuccin.palettes").get_palette("macchiato")
+
+			vim.api.nvim_set_hl(
+				0,
+				"DiagnosticUnderlineError",
+				{ fg = macchiato.red, underline = false, undercurl = true }
+			)
+			vim.api.nvim_set_hl(
+				0,
+				"DiagnosticUnderlineWarn",
+				{ fg = macchiato.yellow, underline = false, undercurl = true }
+			)
+			vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { underline = false, undercurl = true })
+			vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { underline = false, undercurl = true })
+			-- vim.api.nvim_set_hl(0, "DiagnosticUnderlineOk", { underline = false, undercurl = true })
 
 			vim.api.nvim_set_hl(0, "ColorColumn", { bg = macchiato.mantle, fg = macchiato.surface2 })
 			--

@@ -24,6 +24,8 @@ return {
 					"svelte",
 					"typst",
 					"vue",
+					"markdown",
+					"markdown_inline",
 				},
 				sync_install = false,
 				auto_install = true,

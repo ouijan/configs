@@ -48,27 +48,35 @@ return {
 			},
 		},
 		opts = {
-			-- fill any relevant options here
+			popup_border_style = "solid",
 			window = {
 				width = 55,
-				-- position = "float",
-				-- popup = { -- settings that apply to float position only
-				-- 	size = { height = "95%", width = "95%" },
-				-- 	position = "50%", -- 50% means center it
-				-- },
+				position = "float",
+				popup = { -- settings that apply to float position only
+					size = { height = "100%", width = "40%" },
+					position = 0, -- 50% means center it
+					-- position = "50%", -- 50% means center it
+					win_options = {
+						winblend = 10,
+						winhighlight = "Normal:NormalFloat,FloatBorder:NormalFloat",
+					},
+				},
 			},
 			sources = {
 				"filesystem",
-				"git_status",
+				-- "git_status",
 			},
 			source_selector = {
 				winbar = true,
+			},
+			filesystem = {
+				follow_current_file = true,
 			},
 			default_component_configs = {
 				git_status = {
 					symbols = {
 						-- Change type
-						added = "+", -- NOTE: you can set any of these to an empty string to not show them
+						added = "+",
 						deleted = "d",
 						modified = "m",
 						renamed = "r",
@@ -83,5 +91,15 @@ return {
 				},
 			},
 		},
+	},
+	{
+		"antosha417/nvim-lsp-file-operations",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-neo-tree/neo-tree.nvim",
+		},
+		config = function()
+			require("lsp-file-operations").setup()
+		end,
 	},
 }

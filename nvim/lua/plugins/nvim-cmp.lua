@@ -38,8 +38,7 @@ return {
 				},
 				window = {
 					completion = {
-						border = "rounded",
-						-- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+						winhighlight = "Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:Visual,Search:None",
 						col_offset = -3,
 						side_padding = 0,
 					},

@@ -14,11 +14,6 @@ return {
 			vim.notify = notify
 		end,
 	},
-	-- {
-	-- 	"mrded/nvim-lsp-notify",
-	-- 	dependencies = { "rcarriga/nvim-notify" },
-	-- 	opts = {},
-	-- },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -37,9 +32,6 @@ return {
 							style = "none",
 							padding = { 1, 2 },
 						},
-						-- win_options = {
-						-- winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
-						-- },
 					},
 				},
 			},
@@ -62,6 +54,7 @@ return {
 					},
 				},
 				popupmenu = {
+					backend = "cmp",
 					relative = "editor",
 					position = {
 						row = 8,
